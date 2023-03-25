@@ -1,55 +1,33 @@
-# Astro Starter Kit: Basics
+# Werbefrei-Hub
 
-```
-npm create astro@latest -- --template basics
-```
+The typical cityscape in Germany is increasingly dominated by flashing advertisements and animated advertising screens. As soon as you set foot outside, a battle for your attention begins. This is not only annoying, but can also restrict accessibility or even endanger road users through distraction.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+That's why there are several initiatives to take back our cities through new advertising laws.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The Werbefrei-Hub helps you find such initiatives near you for you to get involved in.
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+## Data
 
+All initiatives are stored in [`data/initiativen`](./data/initiativen/). Each file is a JSON file named after the region this initiative is targetting.
 
-## 🚀 Project Structure
+The JSON files are following this syntax:
 
-Inside of your Astro project, you'll see the following folders and files:
+```json
+{
+    "name": "My Awesome City Werbefrei", // This is the name of the initiative
+    "region": {
+        "wikidata": "Q1" // This is the initiatives target region as an object from https://www.wikidata.org
+    },
+    "url": "https://example.com/", // This is the initiatives homepage
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+    // The following CTA part can be left out. It should be added when the initiative needs help with something (e.g. recruiting new members)
+    "cta": {
+        "i18nKey": "phase2_signup", // See ./public/locales/*/translation.json for available keys under "cta"
+        "url": "https://example.com/cta" // The URL which the call-to-action should lead to
+    }
+}
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The whole site is built on [Astro](https://astro.build/). Use `yarn` to install dependencies and `yarn start` to start the development environment.
