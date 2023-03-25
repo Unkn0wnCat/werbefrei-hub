@@ -7,9 +7,13 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate": "astro-i18next generate"
   },
   "dependencies": {
-    "astro": "^2.1.7"
+    "astro": "^2.1.7",
+    "astro-i18next": "^1.0.0-beta.21",
+    "lucide": "^0.127.0",
+    "sass": "^1.60.0"
   }
 }

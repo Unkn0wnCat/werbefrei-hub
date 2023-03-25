@@ -1,14 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import i18next, { t, changeLanguage } from "i18next";
-import type { Initiative } from "../models/initiative.types";
+import type { Initiative } from "../../models/initiative.types";
 import { Globe2 } from "lucide";
-import Icon from "../components/Icon.astro";
+import Icon from "../../components/Icon.astro";
 import { Trans } from "astro-i18next/components";
 
-changeLanguage("de");
+changeLanguage("en");
 
-const initiatives = await Astro.glob<Initiative>("../../data/initiativen/*.json");
+const initiatives = await Astro.glob<Initiative>("../../../data/initiativen/*.json");
 ---
 
 <Layout title={t("site.title")}>

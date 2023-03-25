@@ -1,0 +1,17 @@
+---
+type Node = readonly [tag: string, attrs: Record<string, string|number>, children?: Node[]]
+
+export interface Props {
+	icon: Node
+}
+
+const { icon } = Astro.props;
+
+const Tag = icon[0]
+---
+
+<Tag {...icon[1]}>
+    {icon[2]?.map((child) => {
+        return <Astro.self icon={child}/>
+    })}
+</Tag>

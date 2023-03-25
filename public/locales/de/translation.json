@@ -1,0 +1,29 @@
+{
+    "site": {
+        "title": "Werbefrei-Hub",
+        "description": "Finde Initiativen gegen die exzessive Kommerzialisierung des öffentlichen Raums!",
+        "license": {
+            "site": "Die Daten auf dieser Seite stehen unter der <0>Open Database License</0>.",
+            "content": "Alle Inhalte sind unter der <0>Database Contents License</0> lizensiert."
+        },
+        "footer": "Gemacht mit ❤️ in Deutschland | <0>GitHub</0> | <1>Impressum</1>"
+    },
+    "cta": {
+        "phase2_signup": {
+            "title": "Sammler für die 2. Sammelphase gesucht",
+            "text": "{{initiative_name}} geht in die zweite Sammelphase und braucht Unterstützung um das Unterschriftenziel zu erreichen!",
+            "button": "Jetzt Sammler werden!"
+        }
+    },
+    "home": {
+        "explanation": [
+            "Das typische Stadtbild in Deutschland wird zunehmend von blinkender Reklame und animierten Werbebildschirmen geprägt. Sobald man einen Fuß nach draußen setzt beginnt ein Kampf um die Aufmerksamkeit. Das nervt nicht nur, sondern kann auch Barrierefreiheit einschränken, oder gar Verkehrsteilnehmer durch Ablenkung gefärden.",
+            "Deshalb gibt es mehrere Initiativen, um uns unsere Städte durch neue Werbegesetze zurück zu erobern. Mach mit! Finde eine Initiative in deiner Nähe und bringe dich ein!"
+        ],
+        "initiatives": "Initiativen",
+        "missing": {
+            "title": "Fehlt etwas?",
+            "text": "Diese Liste wird von Freiwilligen gepflegt. Schau doch mal auf <0>GitHub</0> vorbei und hilf uns sie zu vervollständigen!"
+        }
+    }
+}

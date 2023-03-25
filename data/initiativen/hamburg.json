@@ -1,0 +1,11 @@
+{
+    "name": "Hamburg Werbefrei",
+    "region": {
+        "wikidata": "Q1055"
+    },
+    "url": "https://www.hamburg-werbefrei.de/",
+    "cta": {
+        "i18nKey": "phase2_signup",
+        "url": "https://phase2.hamburg-werbefrei.de/"
+    }
+}

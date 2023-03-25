@@ -1,35 +1,111 @@
 ---
+import i18next, { t } from "i18next";
+import { HeadHrefLangs, Trans } from "astro-i18next/components";
+import { localizeUrl } from "astro-i18next";
+
 export interface Props {
-	title: string;
+	title?: string|null;
+	description?: string|null;
 }
 
-const { title } = Astro.props;
+const currentUrl = Astro.url.href;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={i18next.language}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{title||t("site.title")}</title>
+		<meta name="description" content={description||t("site.description")} />
+		<HeadHrefLangs />
 	</head>
 	<body>
-		<slot />
+		<div class="languages">
+			{
+				i18next.languages.map((lang, i) => {
+					if(lang === i18next.language ? "active" : "") return <>{i > 0 ? " / ":""}<span class="active">{lang}</span></>
+					return <>{i > 0 ? " / ":""}<a href={localizeUrl(currentUrl, lang)}>{lang}</a></>
+				})
+			}
+		</div>
+		<div class="content">
+			<slot />
+		</div>
+
+		<footer>
+			<p>
+				<Trans i18nKey={"site.license.site"}><a href="https://opendatacommons.org/licenses/odbl/1.0/" target="_blank" rel="noreferer"/></Trans>
+				<Trans i18nKey={"site.license.content"}><a href="https://opendatacommons.org/licenses/dbcl/1.0/" target="_blank" rel="noreferer"/></Trans>
+			</p>
+			<p><Trans i18nKey={"site.footer"}><a href="https://github.com/Unkn0wnCat/werbefrei-hub" target="_blank" rel="noreferer" /><a href="https://kevink.dev/legal/about" target="_blank" rel="noreferer" /></Trans></p>
+		</footer>
 	</body>
 </html>
+
+<style lang="scss">
+	body {
+		display: flex;
+		flex-direction: column;
+
+		>* {
+			flex-shrink: 0;
+		}
+	}
+
+	.languages {
+		position: relative;
+		max-width: var(--layout-width);
+		width: 100%;
+		left: 50%;
+		transform: translate(-50%, 0);
+		text-align: right;
+		margin-top: 20px;
+		font-size: 1.2em;
+
+		.active {
+			text-decoration: underline solid currentColor;
+		}
+	}
+
+	.content {
+		display: contents;
+		min-height: calc(100% - 10px);
+		flex-grow: 1;
+	}
+
+	footer {
+		padding: var(--padding);
+		max-width: var(--layout-width);
+		margin: 0 auto;
+		text-align: center;
+	}
+</style>
 <style is:global>
 	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--layout-width: 700px;
+		--gap: 20px;
+		--padding: 20px;
+		--border-radius: 10px;
 	}
 	html {
 		font-family: system-ui, sans-serif;
 		background-color: #F6F6F6;
 	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+	html,body {
+		margin: 0;
+		padding: 0;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: underline dotted currentColor;
 	}
 </style>

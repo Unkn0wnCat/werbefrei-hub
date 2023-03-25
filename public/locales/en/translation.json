@@ -1,0 +1,29 @@
+{
+    "site": {
+        "title": "Werbefrei-Hub",
+        "description": "Find initiatives against the excessive capitalization on public spaces!",
+        "license": {
+            "site": "The data on this site is licensed under the <0>Open Database License</0>.",
+            "content": "All inividual contents are licensed under <0>Database Contents License</0>."
+        },
+        "footer": "Made with ❤️ in Germany | <0>GitHub</0> | <1>Imprint</1>"
+    },
+    "cta": {
+        "phase2_signup": {
+            "title": "Help for the 2nd Collection Phase Wanted",
+            "text": "{{initiative_name}} is entering the second collection phase and needs help to hit their signature count!",
+            "button": "Sign up as a helper!"
+        }
+    },
+    "home": {
+        "explanation": [
+            "The typical cityscape in Germany is increasingly dominated by flashing advertisements and animated advertising screens. As soon as you set foot outside, a battle for your attention begins. This is not only annoying, but can also restrict accessibility or even endanger road users through distraction.",
+            "That's why there are several initiatives to take back our cities through new advertising laws. Join us! Find an initiative near you and get involved!"
+        ],
+        "initiatives": "Initiatives",
+        "missing": {
+            "title": "Missing something?",
+            "text": "This list is maintained by volunteers. Head over to <0>GitHub</0> and help us keep it up to date!"
+        }
+    }
+}
