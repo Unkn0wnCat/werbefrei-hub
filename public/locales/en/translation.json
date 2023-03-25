@@ -24,6 +24,10 @@
         "missing": {
             "title": "Missing something?",
             "text": "This list is maintained by volunteers. Head over to <0>GitHub</0> and help us keep it up to date!"
+        },
+        "diy": {
+            "title": "No Initiative in Your City Yet?",
+            "text": "Take it into your own hands! Starting your own initiative is always possible and the <0>Public Spaces e.V.</0> is always happy to answer any questions. So get together with likeminded people and make the first step towards a better city!"
         }
     }
 }
