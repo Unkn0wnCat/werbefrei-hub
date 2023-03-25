@@ -1,14 +1,14 @@
 ---
 import i18next, { t } from "i18next";
 import { HeadHrefLangs, Trans } from "astro-i18next/components";
-import { localizeUrl } from "astro-i18next";
+import { localizePath } from "astro-i18next";
 
 export interface Props {
 	title?: string|null;
 	description?: string|null;
 }
 
-const currentUrl = Astro.url.href;
+const currentPath = Astro.url.pathname;
 const { title, description } = Astro.props;
 ---
 
@@ -28,7 +28,7 @@ const { title, description } = Astro.props;
 			{
 				i18next.languages.map((lang, i) => {
 					if(lang === i18next.language ? "active" : "") return <>{i > 0 ? " / ":""}<span class="active">{lang}</span></>
-					return <>{i > 0 ? " / ":""}<a href={localizeUrl(currentUrl, lang)}>{lang}</a></>
+					return <>{i > 0 ? " / ":""}<a href={localizePath(currentPath, lang)}>{lang}</a></>
 				})
 			}
 		</div>
